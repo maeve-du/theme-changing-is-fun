@@ -26,6 +26,10 @@ export enum C_THEME_STYLES {
   SLATE = 'theme-slate',
 }
 
+export interface ThemeSwitcherProps {
+  handleOpen?: () => void
+}
+
 // Props for Hero Card components
 export interface CardProps {
   className?: string

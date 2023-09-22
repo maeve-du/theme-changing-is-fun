@@ -6,7 +6,7 @@ import { useTheme } from 'next-themes'
 
 //Helpers
 import { cn } from '@/lib/utils'
-import { C_THEME_MODES } from '@/lib/constants'
+import { C_THEME_MODES, ThemeSwitcherProps } from '@/lib/constants'
 import useClientMounted from '@/hooks/useClientMounted'
 
 // Components/Icons
@@ -15,12 +15,8 @@ import { Button } from '@/components/ui/button'
 import { CheckIcon, MoonStar, SunMedium } from 'lucide-react'
 import { GaleOIconThememode } from 'gale-icons'
 
-export interface ThemeModeSwitcherProps {
-  handleOpen?: () => void
-}
-
 // --> Begins here
-const ThemeModeSwitcher = ({ handleOpen }: ThemeModeSwitcherProps) => {
+const ThemeModeSwitcher = ({ handleOpen }: ThemeSwitcherProps) => {
   const isMounted = useClientMounted()
   const { setTheme, theme } = useTheme()
   const [isSystemDarkMode, setIsSystemDarkMode] = useState(false)

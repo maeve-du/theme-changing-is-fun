@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 // Themes
 import { useThemeStyleStore } from '@/store/useThemeStyleStore'
-import { C_THEME_STYLES, ThemeModeSwitcherProps } from '@/lib/constants'
+import { C_THEME_STYLES, ThemeSwitcherProps } from '@/lib/constants'
 
 // helpers
 import { cn, formatThemeName } from '@/lib/utils'
@@ -22,7 +22,7 @@ import {
 import { Paintbrush2Icon } from 'lucide-react'
 
 // --> Begins here
-const ThemeStyleSwitcher = ({ handleOpen }: ThemeModeSwitcherProps) => {
+const ThemeStyleSwitcher = ({ handleOpen }: ThemeSwitcherProps) => {
   // local state
   const themeStyleColor = useThemeStyleStore((state) => state.theme_color)
   const setThemeColor = useThemeStyleStore((state) => state.setThemeStyleColor)
