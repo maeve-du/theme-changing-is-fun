@@ -1,0 +1,5 @@
+export { default as avatar01 } from './avatar01.png'
+export { default as product01 } from './product01.png'
+export { default as ZustandIcon } from './ZustandIcon.png'
+export { default as ZustandIconHover } from './ZustandIconHover.png'
+export { default as Saly } from './Saly.png'
