@@ -26,7 +26,7 @@ import useBodyScroll from '@/hooks/useBodyScroll'
 const Navbar = () => {
   const isMounted = useClientMounted()
   const { hash, setHash } = useHash()
-  const [isNavToogleOn, setIsNavToogleOn] = useState(false)
+  const [isNavToggleOn, setIsNavToggleOn] = useState(false)
   const { isScrolling } = useScrolling()
 
   const headerScrollTransition = isScrolling
@@ -34,15 +34,15 @@ const Navbar = () => {
     : 'bg-transparent py-6 shadow-none'
 
   const handleNavToggle = () => {
-    setIsNavToogleOn((prevState) => !prevState)
+    setIsNavToggleOn((prevState) => !prevState)
   }
 
   const handleNavToggleOff = () => {
-    if (isNavToogleOn) setIsNavToogleOn(false)
+    if (isNavToggleOn) setIsNavToggleOn(false)
   }
 
   // Prevent body scroll when mobile nav is open
-  useBodyScroll(isNavToogleOn)
+  useBodyScroll(isNavToggleOn)
 
   if (!isMounted) return null
 
@@ -89,12 +89,12 @@ const Navbar = () => {
             className='cursor-pointer border mini:hidden'
             size={'icon'}
             variant={'ghost'}>
-            {isNavToogleOn ? <GaleOIconXMarkHi /> : <GaleOIconBars3Hi />}
+            {isNavToggleOn ? <GaleOIconXMarkHi /> : <GaleOIconBars3Hi />}
           </Button>
         </div>
       </div>
       {/* mobile nav items */}
-      <NavItemsMobile isNavToogleOn={isNavToogleOn} handleNavToggle={handleNavToggle} />
+      <NavItemsMobile isNavToggleOn={isNavToggleOn} handleNavToggle={handleNavToggle} />
     </header>
   )
 }

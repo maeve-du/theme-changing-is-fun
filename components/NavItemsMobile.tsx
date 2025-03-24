@@ -8,17 +8,17 @@ import { NavItems } from '@/lib/constants'
 import useHash from '@/hooks/useHash'
 
 interface Props {
-  isNavToogleOn: boolean
+  isNavToggleOn: boolean
   handleNavToggle: () => void
 }
 
-const NavItemsMobile = ({ isNavToogleOn, handleNavToggle }: Props) => {
+const NavItemsMobile = ({ isNavToggleOn: isNavToggleOn, handleNavToggle }: Props) => {
   const { setHash } = useHash()
   return (
     <div>
       <nav
         className={cn(
-          isNavToogleOn ? 'z-50 flex min-h-fit w-full flex-col items-center px-4 py-12 ' : 'hidden',
+          isNavToggleOn ? 'z-50 flex min-h-fit w-full flex-col items-center px-4 py-12 ' : 'hidden',
           'w-full bg-background text-lg transition-all duration-300 ease-in first:border-b-foreground  mini:hidden',
         )}>
         {NavItems.map((item) => (
@@ -37,7 +37,7 @@ const NavItemsMobile = ({ isNavToogleOn, handleNavToggle }: Props) => {
       <div
         onClick={handleNavToggle}
         className={cn(
-          isNavToogleOn ? 'absolute z-50 block min-h-screen w-full bg-foreground/60' : 'hidden',
+          isNavToggleOn ? 'absolute z-50 block min-h-screen w-full bg-foreground/60' : 'hidden',
           'mini:hidden',
         )}
       />
